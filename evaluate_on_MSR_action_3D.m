@@ -63,11 +63,11 @@ for a=1: datacf.numOfActions
             if (size(angles,1)==0)
                 continue;
             end
-            features_fft =fft_feature(angles,num_samples);
+            features_fft =fftPyramid(angles,num_samples);
             angles_shift = circshift(angles', 1)';
             angles_diff = angles  - angles_shift;
             angles_diff = angles_diff(:,1:end-1);
-            feature_diff = fft_feature(angles_diff, num_samples);
+            feature_diff = fftPyramid(angles_diff, num_samples);
             feature_per_class{s, a, e} =[ features_fft ; feature_diff];
             a
             s
@@ -112,7 +112,7 @@ clear feature_per_class
 
 %% train and evalating a svm model on the features
   c =.002;
-  options = ['-c ' num2str(c) ' -s 2'];
+  options = ['-c ' num2str(c)];
   decisions = zeros(length(labels_test),datacf.numOfActions);
   model = train(double(labels_training'), sparse(features_histogram_training'), options);
   [predicted_label, accuracy2, decision_values] = predict(double(labels_test'), sparse(features_histogram_test'), model);
