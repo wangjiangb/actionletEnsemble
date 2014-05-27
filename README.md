@@ -1,4 +1,4 @@
-actionletEnsemble
+Actionlet Ensemble
 =================
 
 Code for paper "Mining actionlet ensemble for action recognition with depth cameras"
