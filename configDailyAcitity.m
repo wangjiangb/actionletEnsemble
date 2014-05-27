@@ -3,7 +3,11 @@ function conf = configDailyAcitity()
 % the correspondence between Kinect joint id, and joint name.
 % the value conf.Name corresponds to the id of the given joint.
 % conf.all is the ids of all the joints used for classification.
-conf.num_actions = 16;
+conf.num_actions = 16; % number of actions.
+conf.num_subjects = 10; % number of subjects.
+conf.num_env = 2; % number of enviornments. (standing/sitting on soffa)
+conf.data_dir = './data';
+conf.feature_dir = './features';
 conf.SHOULDER_LEFT = 5;
 conf.SHOULDER_RIGHT = 9;
 conf.HIP =1;
