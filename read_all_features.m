@@ -1,4 +1,4 @@
-%% Read all the fetures for MSR-DailyActity dataset.
+%% Read all the features for MSR-DailyActity dataset.
 clear;
 num_actions = 3;
 num_subject = 10;
@@ -7,7 +7,8 @@ num_env = 2;
 skeleton_all = {};
 shape_all  = {};
 
-data_dir = './data/';
+conf = configDailyAcitity;
+data_dir = conf.data_dir;
 
 for a  =1:num_actions
     for s = 1:num_subject
