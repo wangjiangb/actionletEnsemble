@@ -5,7 +5,6 @@ num_subject = 10;
 num_env = 2;
 
 skeleton_all = {};
-shape_all  = {};
 
 conf = configDailyAcitity;
 data_dir = conf.data_dir;
@@ -19,12 +18,7 @@ for a  =1:num_actions
             filename = fullfile(data_dir, sprintf('a%02d_s%02d_e%02d_skeleton.txt',a, s,e));
             skeleton = readSkeleton(filename);
             skeleton_all{a, s, e} = skeleton;
-            filename_depth = fullfile(data_dir, sprintf('a%02d_s%02d_e%02d_depth.bin',a, s,e));
-            filename_points = fullfile(data_dir, sprintf('a%02d_s%02d_e%02d_points.bin',a, s,e));
-            %shape_desc = extractShapeDescriptor(filename_depth,filename_points);
-            %shape_all{a,s,e} = shape_desc;
-
         end
     end
 end
-save skeletons.mat
+save('skeletons.mat', 'skeleton_all');
