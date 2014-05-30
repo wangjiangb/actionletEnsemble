@@ -24,10 +24,11 @@ end
 save('skeletons.mat', 'skeleton_all');
 
 %% Compute skeleton features.
+recompute_features = 1;
 for a = 1:conf.num_actions
     for s=1:conf.num_subjects
         for e=1:conf.num_env
-            processOneSkeleton(a, s, e, 1);
+            processOneSkeleton(a, s, e, recompute_features);
         end
     end
 end
