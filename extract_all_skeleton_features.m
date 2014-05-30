@@ -1,17 +1,15 @@
 %% read skeleton.
 clear;
-num_actions = 3;
-num_subject = 10;
-num_env = 2;
+
 
 skeleton_all = {};
 
 conf = configDailyAcitity;
 data_dir = conf.data_dir;
 
-for a  =1:num_actions
-    for s = 1:num_subject
-        for e=1:num_env
+for a  =1:conf.num_actions
+    for s = 1:conf.num_subjects
+        for e=1:conf.num_env
             a
             s
             e
@@ -24,10 +22,11 @@ end
 save('skeletons.mat', 'skeleton_all');
 
 %% Compute skeleton features.
+recompute_features = 1;
 for a = 1:conf.num_actions
     for s=1:conf.num_subjects
         for e=1:conf.num_env
-            processOneSkeleton(a, s, e, 1);
+            processOneSkeleton(a, s, e, recompute_features);
         end
     end
 end

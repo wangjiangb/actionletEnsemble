@@ -6,8 +6,10 @@ function conf = configDailyAcitity()
 conf.num_actions = 16; % number of actions.
 conf.num_subjects = 10; % number of subjects.
 conf.num_env = 2; % number of enviornments. (standing/sitting on soffa)
-conf.data_dir = '~/data/dailyActivity';
-conf.feature_dir = '~/data/dailyFeatures';
+
+conf.data_dir = '/home/jiang/data/dailyActivity';
+conf.feature_dir = '/home/jiang/data/dailyFeatures';
+
 conf.SHOULDER_LEFT = 5;
 conf.SHOULDER_RIGHT = 9;
 conf.HIP =1;
@@ -33,3 +35,8 @@ conf.target_list = [conf.HEAD conf.NECK conf.ANKLE_LEFT conf.ANKLE_RIGHT conf.EL
                conf.WRIST_LEFT conf.ELBOW_RIGHT conf.WRIST_RIGHT conf.SHOULDER_LEFT ...
                conf.SHOULDER_RIGHT conf.HIP conf.KNEE_LEFT conf.KNEE_RIGHT conf.SPINE];
 conf.weight_list = [1 1 1 1 1 1 1 1 1 1 1 1 1 1];
+conf.recompute_features = 1;
+conf.num_bins = [14 14 1];
+conf.bin_size = [6,6,80];
+conf.saturation_size = 3;
+conf.num_samples_SOP = 10;
