@@ -1,6 +1,5 @@
+function extractAllSkeletonFeatures()
 %% read skeleton.
-clear;
-
 
 skeleton_all = {};
 

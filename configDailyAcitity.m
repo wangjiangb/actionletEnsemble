@@ -40,3 +40,7 @@ conf.num_bins = [14 14 1];
 conf.bin_size = [6,6,80];
 conf.saturation_size = 3;
 conf.num_samples_SOP = 10;
+
+
+conf.train_sub = [1 3 5 7 9];
+conf.test_sub = [2 4 6 8 10];
