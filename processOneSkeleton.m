@@ -11,7 +11,7 @@ if (ischar(s)), s = str2num(s), end;
 if (ischar(e)), e = str2num(e), end;
 if (ischar(recompute_features)), recompute_features = str2num(recompute_features), end;
 
-conf = configDailyAcitity()
+conf = configDailyAcitity();
 data = load('skeletons.mat');
 skeleton_all  = data.skeleton_all;
 

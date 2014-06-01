@@ -3,6 +3,6 @@ function [depth, skeleton_id] =  readDepthBin(depth_filename)
 if (exist(depth_filename, 'file'))
     [depth, skeleton_id] =  ReadDepthBin(fullfile(depth_filename));
 else
-    throw(sprintf('%s not exist', depth_filename));
+    error(sprintf('%s not exist', depth_filename));
 end
 end
