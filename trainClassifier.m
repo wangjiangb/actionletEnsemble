@@ -7,11 +7,11 @@ function trainClassifier()
                 skeleton_file = fullfile(conf.feature_dir, sprintf('a%02d_s%02d_e%02d_skeleton.mat',a,s,e));
                 lop_file = fullfile(conf.feature_dir, sprintf('a%02d_s%02d_e%02d_features.mat',a, s,e));
                 skeleton_feature = load(skeleton_file);
-                skeleton_feature = [normalizeFeature(skeleton_feature.feature_current(:)); ...
-                                    normalizeFeature(skeleton_feature.pos(:))];
+                skeleton_feature = [skeleton_feature.feature_current(:); ...
+                                    skeleton_feature.pos(:) * 100];
                 lop_feature = load(lop_file);
                 lop_feature = lop_feature.fea;
-                all_features{a, s, e}= [skeleton_feature(:); normalizeFeature(lop_feature(:))];
+                all_features{a, s, e}= [skeleton_feature(:); lop_feature(:) * 0.001];
             end
         end
     end
