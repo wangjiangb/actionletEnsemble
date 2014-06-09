@@ -1,3 +1,0 @@
-extractAllSkeletonFeatures;
-extractAllLopFeatures;
-trainClassifier;
